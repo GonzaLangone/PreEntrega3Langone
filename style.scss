@@ -1,0 +1,471 @@
+$color-fondo-logo : #012a6bfc;
+$color-fondo-basic :#fafafa;
+$font-titulo:Georgia, 'Times New Roman', Times, serif;;
+.grid-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 2000px 50px;
+    grid-template-areas: 
+    'cabecera'
+    'medio'
+    'fin';
+    row-gap: 5%;
+    header{grid-area: cabecera;
+        .navbar{background-color:$color-fondo-logo; z-index: 1;
+        }
+        .logo{
+            width: 20%;
+            margin-left: 10%;
+        }
+        
+    }
+    main{
+        grid-area: medio;
+        margin-top: 5%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows:  35% 25% 25%;
+
+        grid-template-areas: 
+        'carrucel carrucel'
+        'productos productos'
+        'flyer  flyerr';
+        row-gap: 6%;
+        .carousel{grid-area: carrucel; z-index: 0; 
+            background-color: #e5e5e567;
+        img{
+            margin: 75 auto;
+            
+        }
+        video{
+            background-color: black;
+        }
+        }
+        .players{grid-area: productos;}
+        .Macbook{grid-area: flyer;
+            background-color: black;
+        h1{color: rgba(255, 255, 255, 0);
+            background-image: radial-gradient(at top center, #EFF1FF 20%, #5F6065 80%);
+            background-clip: text;
+            }
+        p{
+            color: white;
+        }
+        img{
+            width: 50%;
+        }
+        align-content: center;
+        text-align: center;
+
+    }
+        .flyer{grid-area: flyerr;
+            background-color: $color-fondo-basic;
+            text-align: center;
+            align-content: center;
+            img{
+                
+                width: 70%;
+            }
+            h1{
+                padding-bottom: 5%;
+            }
+            h2{
+                color: #a59dff00;
+                background: linear-gradient(27deg, #fadf50, #ff8598, #a59dff 55%);
+                background-clip: text;
+                font-size: 42px;
+
+            }
+        }
+
+
+
+    }
+    footer{grid-area: fin;
+        background-color: $color-fondo-logo;
+        align-content: center;
+    }
+   
+
+
+}
+
+// a
+.players{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.playerName{
+    margin-top: 8%;
+
+}
+.player{
+   
+    transition: 2s ease;
+    display: flex;
+    flex-direction: column;
+    font-family:$font-titulo;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+    height: 75%;
+    margin-left: 1%;
+    margin-right: 1%; ;
+    border-radius: 15px;
+}
+
+
+.player:hover{
+    transition: 2s ease;
+    transform: scale(1.1);
+    color: $color-fondo-logo;
+
+}
+.player img{
+    
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+// Paginas Catalogos
+
+.paginaIphone{
+    display: grid;
+    grid-template-columns: 100% !important;
+    grid-template-rows: 10% 60% !important ;
+    grid-template-areas: 
+    'promocion promocion'
+    'catalogoIph catalogoIph'
+     !important;
+}
+
+.promocion{
+    grid-area: promocion;
+    background-color: $color-fondo-basic;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 200;
+    align-items: center;
+    span{
+        color: $color-fondo-logo;
+    }
+    section{
+        width: 45%;
+    }
+    .entregas {
+        img{width: 15%;}
+    }
+    .compras{
+        img{width: 15%;}
+    }
+    .seguridad{
+        img{width: 15%;}
+    }
+}
+.cards{
+    grid-area: catalogoIph;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+    .card{
+        align-items:center;
+        padding-top: 1%;
+        width: 25%;
+        height:45%;
+        margin: 1%;
+        .stock{
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            border-radius: 10px;
+            padding-top: 1%;
+            h2{
+            font-size: 25px;
+           
+            color: $color-fondo-logo;
+            
+        }
+        }
+    }
+    .card-title
+    {
+        font-size: 35px;
+    }
+    .card-img-top{
+        text-align: center;
+        width: 55%;
+    }
+}
+
+// pagina Prod individual
+.unidad{
+    row-gap: 1px !important;
+}
+.promocionProduc{
+    background-color: $color-fondo-basic;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    height: 15%;
+    font-size: 20px;
+    font-weight: 200;
+    align-items: start;
+    span{
+        color: $color-fondo-logo;
+    }
+}
+.producto{
+    grid-area: catalogoIph;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 13% 60% 40%;
+    grid-template-areas: 
+    'titulo titulo'
+    'foto seleccion'
+    'caract caract'
+    ;
+    
+    .title{
+        grid-area: titulo;
+        text-align: center;
+        padding-bottom: 15%;
+        h1{font-size: 80px;
+        font-weight: 500;
+        font-family:$font-titulo;
+    }
+    }
+    .fotoProduc{
+        grid-area: foto;
+        .carousel-item, .carousel, .carousel-inner{
+            border-radius: 50px;
+            width: 90%;
+            margin-left: 3%;
+            background-color: $color-fondo-logo;
+            
+        }
+        img{width: 40% !important; }
+    }
+    .seleccion{
+        text-align: center;
+        grid-area: seleccion;
+        align-content: center;
+        
+        img{
+            width: 3%;
+            margin: 1%;
+        }
+        .seleccion-colores{
+            background-color: $color-fondo-basic;
+            height: 200px;
+            margin-right: 5%;
+            border-radius: 20px;
+            align-content: center;
+        }
+        .seleccion-memoria{
+            margin-top: 5%;
+            margin-right: 5%;
+            border-radius: 20px;
+            background-color: $color-fondo-basic;
+            height: 200px;
+            align-content: center;
+        }
+        .almacenamiento{
+            
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            label{
+                margin: 5%;
+                
+            }
+            p{
+                
+                color: black;
+                width: 100px;
+                height: 100%;
+                align-content: center;
+                border-radius: 10px;
+                border: 1px solid black;
+            }
+
+        }
+            .reservar{
+            margin-top: 5%;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+                a{text-decoration: none;}
+                h1{
+                    width: 350px;
+                    border-radius: 10px;
+                    border: 1px solid black;}
+            }
+
+    }
+    .caracteristicas{
+        grid-area: caract;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .contenido-caja{
+        width: 100%;
+        margin-top: 5%;
+        background-color: $color-fondo-basic;
+        text-align: center;
+        h1{
+            font-size: 50px;
+            font-weight: 300;
+        }
+        img{
+            margin-left: 3%;
+            width: 20%;
+            height: 90%;
+        }
+        .cable{
+            width: 10%;
+        }
+    }
+}
+
+
+// fin pagina ProducIndividual
+
+
+/* mediaQuery */
+@media  (max-width:700px){
+    .grid-container{
+        grid-template-rows: 50px 3400px 50px;
+    }
+    .logo{
+        width: 60% !important;
+    }
+    main {
+        
+        grid-template-columns: 100% !important;
+        grid-template-rows: 20% 50% 12% 10% !important;
+        grid-template-areas: 
+        'carrucel'
+        'productos'
+        'flyer'  
+        'flyerr'!important ;
+        row-gap: 1% !important;
+
+    }
+    .carousel-item{
+        img{
+            margin: 200px auto !important;
+            height:200px !important;
+        }
+    }
+    .players{
+        flex-direction: column;
+        .player{
+            padding-top: 5%;
+            width: 50%;
+        }
+        img{
+            height: 70%;
+        }
+    }
+
+    // Pagina Iphones
+
+    .PagIphone{
+        grid-template-rows: 50px 4000px 50px;
+    }
+    .cards{
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+    }
+    .card{
+        width: 65% !important;
+        
+    }
+
+    .promocion{        
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        height: 550px;
+    padding-bottom: 5%;}
+
+    .paginaIphone{
+        display: grid;
+        grid-template-columns: 100% !important;
+        grid-template-rows: 28% 55% !important ;}
+
+        .stock{h2{
+            font-size: 15px  !important;
+        }}
+        // pagina Unidad
+        .PorProduc{
+            grid-template-rows: 50px 2500px 50px;
+    
+        }
+        .producto {
+            grid-area: catalogoIph;
+            display: grid;
+            grid-template-columns:100% !important;
+            grid-template-rows: 12% 30% 40% 40% !important;
+            grid-template-areas: 
+            'titulo'
+            'foto '
+            'seleccion'
+            'caract '
+            !important;}
+            .unidad{
+                display: grid;
+                grid-template-columns: 100% !important;
+                grid-template-rows: 5% 70% !important;
+                .promocionProduc{
+                    height: 90px;
+                    p{font-size: 15px !important;}
+                }
+            }
+            .row{
+                display: flex;
+                flex-direction: column;
+                justify-content: center !important;
+            }
+            .caracteristicas{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+            }
+            .contenido-caja{
+                height: 50%;
+
+                h1{
+                    font-size: 30px !important;
+                    font-weight: 300;
+                }
+                img{
+                    margin-left: 3%;
+                    width: 20%;
+                    height: 85% !important;
+                }
+                .cable{
+                    width: 10%;
+                }
+            }
+
+
+
+}
